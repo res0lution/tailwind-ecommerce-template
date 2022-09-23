@@ -259,6 +259,41 @@
 </div>
  <!-- ---- End BreadCrum --->
 
+  <!-- ----  Start Product --->
+  <div class="container pt-4 pb-6 grid lg:grid-cols-2 gap-6">
+    <!-- ---- Start Product Image --->
+    <div>
+        <div>
+            <img id="main-img" src="./images/products/product12.jpg" alt="product" class="w-full" />
+        </div>
+
+        <div class="grid grid-cols-5 gap-4 mt-4">
+            <div>
+                <img src="./images/products/product12.jpg" alt="product" class="single-img w-full cursor-pointer border border-primary" />
+            </div>
+
+            <div>
+                <img src="./images/products/product2.jpg" alt="product" class="single-img w-full cursor-pointer border" />
+            </div>
+
+            <div>
+                <img src="./images/products/product3.jpg" alt="product" class="single-img w-full cursor-pointer border" />
+            </div>
+
+            <div>
+                <img src="./images/products/product4.jpg" alt="product" class="single-img w-full cursor-pointer border" />
+            </div>
+
+            <div>
+                <img src="./images/products/product5.jpg" alt="product" class="single-img w-full cursor-pointer border" />
+            </div>
+        </div>
+    </div>
+    <!-- ----  End Product Image --->
+
+  </div>
+  <!-- ----  End Product --->
+
 
 
  <!-- ---- Start Footer  ----- -->
@@ -399,6 +434,29 @@
      </div>
 
  </div>
+
+ <script>
+    let mainImg = document.getElementById("main-img");
+    let imgBars = document.getElementsByClassName('single-img')
+
+    for(let imgBar of imgBars) {
+        imgBar.addEventListener('click', function() {
+            clearActive()
+            console.log('img', this, mainImg)
+            let imgPath = imgBar.getAttribute('src')
+            mainImg.setAttribute('src', imgPath)
+            this.classList.add('border-primary')
+        })
+    }
+
+    function clearActive() {
+        for(let imgBar of imgBars) {
+            imgBar.classList.remove('border-primary')
+        }
+    }
+
+
+ </script>
 
 
   <!-- ---- End Copyright   ----- -->
